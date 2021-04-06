@@ -16,7 +16,7 @@ namespace algorithm_assessment_1 {
             } else {  // negative numbers allow descending iteration
                 int counter = 1;
                 for (int i = array.Length - 1; i >= 0; i--) {
-                    if (counter % everyNthValue == 0) {
+                    if (counter % -everyNthValue == 0) {
                         Console.WriteLine(array[i]);
                     }
                     counter++;
