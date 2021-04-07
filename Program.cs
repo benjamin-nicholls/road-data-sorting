@@ -67,14 +67,17 @@ namespace algorithm_assessment_1 {
                     case 3:  // Print ordered (QuickSort).
                         roads[UserRoadNumber].PrintRoadDataOrderedQuickSort();
                         LastAction = $"Printed road {UserRoadNumber + 1} (ordered by QuickSort) to screen.";
+                        Console.WriteLine($"Number of steps taken (QuickSort): {Sorting.GetStepsCounter()}.");
                         break;
                     case 4:  // Print ordered (Bubble Sort).
                         roads[UserRoadNumber].PrintRoadDataOrderedBubbleSort();
                         LastAction = $"Printed road {UserRoadNumber + 1} (ordered by Bubble Sort) to screen.";
+                        Console.WriteLine($"Number of steps taken (Bubble Sort): {Sorting.GetStepsCounter()}.");
                         break;
                     case 5:  // Print ordered (Selection Sort).
                         roads[UserRoadNumber].PrintRoadDataOrderedSelectionSort();
                         LastAction = $"Printed road {UserRoadNumber + 1} (ordered by Selection Sort) to screen.";
+                        Console.WriteLine($"Number of steps taken (Selection Sort): {Sorting.GetStepsCounter()}.");
                         break;
                     case 6:
                         break;
@@ -99,12 +102,14 @@ namespace algorithm_assessment_1 {
                         NumberToSearchFor = GetIntInputFromUser();
                         roads[UserRoadNumber].FindValueBinaryALL(NumberToSearchFor);
                         LastAction = $"Searched for {NumberToSearchFor} (Binary Search).";
+                        Console.WriteLine($"Number of steps taken (Binary Search): {Searching.GetStepsCounter()}.");
                         break;
                     case 12:  // Search for a value (return indexes or nearest) (Binary Search).
                         Console.WriteLine($"What number do you want to search for?");
                         NumberToSearchFor = GetIntInputFromUser();
                         roads[UserRoadNumber].FindValueBinaryNEAREST(NumberToSearchFor);
                         LastAction = $"Searched for {NumberToSearchFor} (Binary Search).";
+                        Console.WriteLine($"Number of steps taken (Binary Search): {Searching.GetStepsCounter()}.");
                         break;
 
                     case 13:  // Search for a value (return indexes) (Sequential Search).
@@ -112,12 +117,14 @@ namespace algorithm_assessment_1 {
                         NumberToSearchFor = GetIntInputFromUser();
                         roads[UserRoadNumber].FindValueSequentialALL(NumberToSearchFor);
                         LastAction = $"Searched for {NumberToSearchFor} (Sequential Search).";
+                        Console.WriteLine($"Number of steps taken (Sequential Search): {Searching.GetStepsCounter()}.");
                         break;
                     case 14:  // Search for a value (return indexes or nearest) (Sequential Search).
                         Console.WriteLine($"What number do you want to search for?");
                         NumberToSearchFor = GetIntInputFromUser();
                         roads[UserRoadNumber].FindValueSequentialNEAREST(NumberToSearchFor);
                         LastAction = $"Searched for {NumberToSearchFor} (Sequential Search).";
+                        Console.WriteLine($"Number of steps taken (Sequential Search): {Searching.GetStepsCounter()}.");
                         break;
                     default:
                         LastAction = "ERROR: Invalid input.";
