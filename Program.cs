@@ -8,7 +8,7 @@ namespace algorithm_assessment_1 {
             string[] Filepaths = { "Road_1_256.txt", "Road_2_256.txt", "Road_3_256.txt", "Road_1_2048.txt", "Road_2_2048.txt", "Road_3_2048.txt"};
             string[] MenuOptions = { "0. Exit.", "1. Switch road number.", "2. Print unordered (for reference).\n",
                 "3. Print ordered (QuickSort).", "4. Print ordered (Bubble Sort).",
-                "5. Print ordered (some sorting algorithm", "6. Print ordered (another sorting algorithm)\n",
+                "5. Print ordered (Selection Sort)", "6. Print ordered (another sorting algorithm)\n",
                 "7. Print ordered (every 10th value ascending).", "8. Print ordered (every 10th value descending).",
                 "9. Print ordered (every 50th value ascending).", "10. Print ordered (every 50th value descending).\n",
                 "11. Search for a value (return indexes) (Binary Search).", "12. Search for a value (return indexes or nearest) (Binary Search).",
@@ -76,7 +76,9 @@ namespace algorithm_assessment_1 {
                         roads[UserRoadNumber].PrintRoadDataOrderedBubbleSort();
                         LastAction = $"Printed road {UserRoadNumber + 1} (ordered by Bubble Sort) to screen.";
                         break;
-                    case 5:
+                    case 5:  // Print ordered (Selection Sort).
+                        roads[UserRoadNumber].PrintRoadDataOrderedSelectionSort();
+                        LastAction = $"Printed road {UserRoadNumber + 1} (ordered by Selection Sort) to screen.";
                         break;
                     case 6:
                         break;

@@ -73,6 +73,15 @@ namespace algorithm_assessment_1 {
             MiscMethods.PrintIntArrayToScreen(_dataOrdered, everyNthValue);
         }
 
+        public void PrintRoadDataOrderedSelectionSort() {
+            _dataOrdered = Sorting.SelectionSort(_dataOrdered);
+            MiscMethods.PrintIntArrayToScreen(_dataOrdered);
+        }
+        public void PrintRoadDataOrderedSelectionSort(int everyNthValue) {
+            _dataOrdered = Sorting.SelectionSort(_dataOrdered);
+            MiscMethods.PrintIntArrayToScreen(_dataOrdered, everyNthValue);
+        }
+
         public void FindValueBinaryALL(int NumberToSearchFor) {
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
             Console.WriteLine(Searching.BinarySearchIterativeALL(_dataOrdered, NumberToSearchFor));
