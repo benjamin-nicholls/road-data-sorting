@@ -7,7 +7,9 @@ namespace algorithm_assessment_1 {
             int left = 0;
             int right = array.Length - 1;
             List<int> indexesOfNumberToFind = new List<int>();
+            int StepsCounter = 0;
             while (left <= right) {
+                StepsCounter++;
                 int midpoint = (left + right) / 2;
                 if (array[midpoint] == numberToFind) {
                     indexesOfNumberToFind.Add(midpoint);
@@ -17,6 +19,7 @@ namespace algorithm_assessment_1 {
                         while (array[pointer] == numberToFind) {
                             indexesOfNumberToFind.Add(pointer);
                             pointer--;
+                            StepsCounter++;
                             if (pointer < 0) { break; }
                         }
                     }
@@ -25,6 +28,7 @@ namespace algorithm_assessment_1 {
                         while (array[pointer] == numberToFind) {
                             indexesOfNumberToFind.Add(pointer);
                             pointer++;
+                            StepsCounter++;
                             if (pointer > array.Length - 1) { break; }
                         }
                     }
@@ -33,6 +37,7 @@ namespace algorithm_assessment_1 {
                 if (array[midpoint] < numberToFind) { left = midpoint + 1; }
                 else { right = midpoint - 1; }
             }
+            Console.WriteLine($"Number of steps taken trying to find {numberToFind}: {StepsCounter}.");
             if (indexesOfNumberToFind.Count == 0) { return $"{numberToFind} is not in the data."; }
             // List > array > sort (array) > string > return
             return $"{numberToFind} is located in the following indexes: {String.Join(", ", Sorting.QuickSort(indexesOfNumberToFind.ToArray()))}.";
@@ -42,6 +47,7 @@ namespace algorithm_assessment_1 {
             int left = 0;
             int right = array.Length - 1;
             List<int> indexesOfNumberToFind = new List<int>();
+            int StepsCounter = 0;
             while (left <= right) {
                 int midpoint = (left + right) / 2;
                 if (array[midpoint] == numberToFind) {
@@ -52,6 +58,7 @@ namespace algorithm_assessment_1 {
                         while (array[pointer] == numberToFind) {
                             indexesOfNumberToFind.Add(pointer);
                             pointer--;
+                            StepsCounter++;
                             if (pointer < 0) { break; }
                         }
                     }
@@ -60,6 +67,7 @@ namespace algorithm_assessment_1 {
                         while (array[pointer] == numberToFind) {
                             indexesOfNumberToFind.Add(pointer);
                             pointer++;
+                            StepsCounter++;
                             if (pointer > array.Length - 1) { break; }
                         }
                     }
@@ -68,6 +76,7 @@ namespace algorithm_assessment_1 {
                 if (array[midpoint] < numberToFind) { left = midpoint + 1; }
                 else { right = midpoint - 1; }
             }
+            Console.WriteLine($"Number of steps taken trying to find {numberToFind}: {StepsCounter}.");
             if (indexesOfNumberToFind.Count == 0) {
                 // out of bounds checks
                 if (left >= array.Length) {
@@ -91,23 +100,29 @@ namespace algorithm_assessment_1 {
 
         public static string SequentialSearchALL(int[] array, int numberToFind) {
             List<int> indexesOfNumberToFind = new List<int>();
+            int StepsCounter = 0;
             // stop looping if number is higher than number to find
             for (int i = 0; i < array.Length; i++) {
                 if (array[i] > numberToFind ) { break; }
                 if (array[i] == numberToFind) { indexesOfNumberToFind.Add(i); }
+                StepsCounter++;
             }
+            Console.WriteLine($"Number of steps taken: {StepsCounter}.");
             if (indexesOfNumberToFind.Count == 0) { return $"{numberToFind} is not in the data."; }
             return $"{numberToFind} is located in the following indexes: {String.Join(", ", indexesOfNumberToFind.ToArray())}.";
         }
         public static string SequentialSearchNEAREST(int[] array, int numberToFind) {
             List<int> indexesOfNumberToFind = new List<int>();
+            int StepsCounter = 0;
             int pointer = 0;  // used for NEAREST check
             // stop looping if number is higher than number to find
             for (int i = 0; i < array.Length; i++) {
                 if (array[i] > numberToFind) { break; }
                 if (array[i] == numberToFind) { indexesOfNumberToFind.Add(i); }
                 pointer++;
+                StepsCounter++;
             }
+            Console.WriteLine($"Number of steps taken trying to find {numberToFind}: {StepsCounter}.");
             if (indexesOfNumberToFind.Count == 0) {
                 // out of bounds checks
                 if (pointer + 1 >= array.Length) {
