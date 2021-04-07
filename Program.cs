@@ -11,7 +11,7 @@ namespace algorithm_assessment_1 {
                 "4. Print ordered (every 10th value ascending).", "5. Print ordered (every 10th value descending).",
                 "6. Print ordered (every 50th value ascending).", "7. Print ordered (every 50th value descending).",
                 "8. Search for a value (return indexes).", "9. Search for a value (return indexes or nearest)" };
-            int UserResponse = 1;
+            int UserResponse;
             int UserRoadNumber = 0;
             int NumberToSearchFor;
             string LastAction = "Program started.";
