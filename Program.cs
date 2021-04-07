@@ -55,17 +55,13 @@ namespace algorithm_assessment_1 {
                         while (true) {
                             for (int i =0; i < roads.Count; i++) { Console.WriteLine($"    {i+1}. {roads[i].GetName()}"); }
                             Console.WriteLine($"\n    Current number of roads: {roads.Count}.\n    Which road would you like to select?");
-                            try {
-                                UserRoadNumber = Convert.ToInt16(Console.ReadLine()) - 1;
-                                if (UserRoadNumber >= 0 && UserRoadNumber < roads.Count) {
-                                    LastAction = $"Changed selected road to road {UserRoadNumber + 1}.";
-                                    break;
-                                } else {
-                                    Console.WriteLine("ERROR: Invalid input.");
-                                }
-                            } catch {
+                            UserRoadNumber = GetIntInputFromUser() - 1;
+                            if (UserRoadNumber >= 0 && UserRoadNumber < roads.Count) {
+                                LastAction = $"Changed selected road to road {UserRoadNumber + 1}.";
+                                break;
+                            } else {
                                 Console.WriteLine("ERROR: Invalid input.");
-                            }  
+                            }
                         }
                         break;
                     case 2:  // Print unordered (for reference)
@@ -94,15 +90,15 @@ namespace algorithm_assessment_1 {
                         break;
                     case 8:  // Search for a value (return indexes) binary
                         Console.WriteLine($"What number do you want to search for?");
-                        NumberToSearchFor = Convert.ToInt16(Console.ReadLine());
+                        NumberToSearchFor = GetIntInputFromUser();
                         roads[UserRoadNumber].FindValueBinaryALL(NumberToSearchFor);
-                        LastAction = $"Searched for {NumberToSearchFor}.";
+                        LastAction = $"Searched for {NumberToSearchFor} (binary).";
                         break;
                     case 9:  // Search for a value (return indexes or nearest) binary
                         Console.WriteLine($"What number do you want to search for?");
-                        NumberToSearchFor = Convert.ToInt16(Console.ReadLine());
+                        NumberToSearchFor = GetIntInputFromUser();
                         roads[UserRoadNumber].FindValueBinaryNEAREST(NumberToSearchFor);
-                        LastAction = $"Searched for {NumberToSearchFor}.";
+                        LastAction = $"Searched for {NumberToSearchFor} (binary).";
                         break;
                     case 10:  // print ordered bubblesort
                         roads[UserRoadNumber].PrintRoadDataOrderedBubbleSort();
@@ -110,15 +106,15 @@ namespace algorithm_assessment_1 {
                         break;
                     case 13:  // search for a value (return indexes) sequential
                         Console.WriteLine($"What number do you want to search for?");
-                        NumberToSearchFor = Convert.ToInt16(Console.ReadLine());
+                        NumberToSearchFor = GetIntInputFromUser();
                         roads[UserRoadNumber].FindValueSequentialALL(NumberToSearchFor);
-                        LastAction = $"Searched for {NumberToSearchFor}.";
+                        LastAction = $"Searched for {NumberToSearchFor} (sequential).";
                         break;
                     case 14:  // search for a value (return indexes or nearest) sequential
                         Console.WriteLine($"What number do you want to search for?");
-                        NumberToSearchFor = Convert.ToInt16(Console.ReadLine());
+                        NumberToSearchFor = GetIntInputFromUser();
                         roads[UserRoadNumber].FindValueSequentialNEAREST(NumberToSearchFor);
-                        LastAction = $"Searched for {NumberToSearchFor}.";
+                        LastAction = $"Searched for {NumberToSearchFor} (sequential).";
                         break;
                     default:
                         LastAction = "ERROR: Invalid input.";
@@ -129,6 +125,19 @@ namespace algorithm_assessment_1 {
                     Console.ReadKey();
                 }
             } while (UserResponse != 0);
+        }
+
+        static int GetIntInputFromUser() {
+            int input;
+            while (true) {
+                try {
+                    input = Convert.ToInt16(Console.ReadLine());
+                    break;
+                } catch {
+                    Console.WriteLine("ERROR: Invalid input.");
+                }
+            }
+            return input;
         }
     }
 }
