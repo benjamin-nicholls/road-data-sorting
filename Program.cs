@@ -10,8 +10,9 @@ namespace algorithm_assessment_1 {
                 "2. Print unordered (for reference).", "3. Print ordered (QuickSort).",
                 "4. Print ordered (every 10th value ascending).", "5. Print ordered (every 10th value descending).",
                 "6. Print ordered (every 50th value ascending).", "7. Print ordered (every 50th value descending).",
-                "8. Search for a value (return indexes).", "9. Search for a value (return indexes or nearest)",
-                "10. Print ordered (BubbleSort).", };
+                "8. Search for a value (return indexes) (binary).", "9. Search for a value (return indexes or nearest) (binary).",
+                "10. Print ordered (BubbleSort).", "11. Print ordered (some sorting algorithm",
+                "12. Print ordered (another sorting algorithm)", "13. Search for a value (return indexes) (sequential)."  };
             int UserResponse;
             int UserRoadNumber = 0;
             int NumberToSearchFor;
