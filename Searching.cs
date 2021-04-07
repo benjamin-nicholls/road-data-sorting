@@ -92,7 +92,8 @@ namespace algorithm_assessment_1 {
         public static string SequentialSearchALL(int[] array, int numberToFind) {
             List<int> indexesOfNumberToFind = new List<int>();
             // stop looping if number is higher than number to find
-            for (int i = 0; array[i] > numberToFind; i++) {
+            for (int i = 0; i < array.Length; i++) {
+                if (array[i] > numberToFind ) { break; }
                 if (array[i] == numberToFind) { indexesOfNumberToFind.Add(i); }
             }
             if (indexesOfNumberToFind.Count == 0) { return $"{numberToFind} is not in the data."; }
@@ -102,7 +103,8 @@ namespace algorithm_assessment_1 {
             List<int> indexesOfNumberToFind = new List<int>();
             int pointer = 0;  // used for NEAREST check
             // stop looping if number is higher than number to find
-            for (int i = 0; i > array.Length || array[i] > numberToFind; i++) {
+            for (int i = 0; i < array.Length; i++) {
+                if (array[i] > numberToFind) { break; }
                 if (array[i] == numberToFind) { indexesOfNumberToFind.Add(i); }
                 pointer++;
             }
