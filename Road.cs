@@ -79,13 +79,21 @@ namespace algorithm_assessment_1 {
             MiscMethods.PrintIntArrayToScreen(_dataOrdered, everyNthValue);
         }
 
-        public void FindValueALL(int NumberToSearchFor) {
+        public void FindValueBinaryALL(int NumberToSearchFor) {
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
             Console.WriteLine(Searching.BinarySearchIterativeALL(_dataOrdered, NumberToSearchFor));
         }
-        public void FindValueNEAREST(int NumberToSearchFor) {
+        public void FindValueBinaryNEAREST(int NumberToSearchFor) {
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
             Console.WriteLine(Searching.BinarySearchIterativeNEAREST(_dataOrdered, NumberToSearchFor));
+        }
+        public void FindValueSequentialALL(int NumberToSearchFor) {
+            _dataOrdered = Sorting.QuickSort(_dataOrdered);
+            Console.WriteLine(Searching.SequentialSearchALL(_dataOrdered, NumberToSearchFor));
+        }
+        public void FindValueSequentialNEAREST(int NumberToSearchFor) {
+            _dataOrdered = Sorting.QuickSort(_dataOrdered);
+            Console.WriteLine(Searching.SequentialSearchNEAREST(_dataOrdered, NumberToSearchFor));
         }
     }
 }
