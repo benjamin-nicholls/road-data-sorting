@@ -134,7 +134,7 @@ namespace algorithm_assessment_1 {
                     input = Convert.ToInt16(Console.ReadLine());
                     break;
                 } catch {
-                    Console.WriteLine("ERROR: Invalid input.");
+                    Console.WriteLine("ERROR: Invalid input. Please try again.\n");
                 }
             }
             return input;
