@@ -87,6 +87,7 @@ namespace algorithm_assessment_1 {
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
             Console.WriteLine(Searching.BinarySearchIterativeNEAREST(_dataOrdered, NumberToSearchFor));
         }
+
         public void FindValueSequentialALL(int NumberToSearchFor) {
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
             Console.WriteLine(Searching.SequentialSearchALL(_dataOrdered, NumberToSearchFor));
