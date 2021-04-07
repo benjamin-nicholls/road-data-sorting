@@ -108,13 +108,13 @@ namespace algorithm_assessment_1 {
             }
             if (indexesOfNumberToFind.Count == 0) {
                 // out of bounds checks
-                if (pointer >= array.Length) {
+                if (pointer + 1 >= array.Length) {
                     return $"{numberToFind} is not present in the data. {array[pointer - 1]} is the closest value. {SequentialSearchALL(array, array[pointer - 1])}";
-                } else if (right < 0) {
+                } else if (pointer - 1 < 0) {
                     return $"{numberToFind} is not present in the data. {array[pointer + 1]} is the closest value. {SequentialSearchALL(array, array[pointer + 1])}";
                 }
                 // actual checks
-                if (array[pointer+1] - numberToFind < numberToFind - array[pointer-1]) {
+                if (array[pointer + 1] - numberToFind < numberToFind - array[pointer - 1]) {
                     return $"{numberToFind} is not present in the data. {array[pointer + 1]} is the closest value. {SequentialSearchALL(array, array[pointer + 1])}";
                 } else if (numberToFind - array[pointer - 1] < array[pointer + 1] - numberToFind) {
                     return $"{numberToFind} is not present in the data. {array[pointer - 1]} is the closest value. {SequentialSearchALL(array, array[pointer - 1])}";
@@ -122,8 +122,6 @@ namespace algorithm_assessment_1 {
                     return $"{numberToFind} is not present in the data. {array[pointer - 1]} and {array[pointer + 1]} are the closest values." +
                         $"\n{SequentialSearchALL(array, array[pointer - 1])}" + $"\n{SequentialSearchALL(array, array[pointer + 1])}";
                 }
-
-
             }
             return $"{numberToFind} is located in the following indexes: {String.Join(", ", indexesOfNumberToFind.ToArray())}.";
         }
