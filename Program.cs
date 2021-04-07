@@ -6,7 +6,7 @@ namespace algorithm_assessment_1 {
         static void Main(string[] args) {
             List<Road> roads = new List<Road>();
             string[] Filepaths = { "Road_1_256.txt", "Road_2_256.txt", "Road_3_256.txt", "Road_1_2048.txt", "Road_2_2048.txt", "Road_3_2048.txt"};
-            string[] MenuOptions = { "0. Exit.", "1. Switch road number.", "2. Print unordered (for reference).",
+            string[] MenuOptions = { "0. Exit.", "1. Switch road number.", "2. Print unordered (for reference).\n",
                 "3. Print ordered (QuickSort).", "4. Print ordered (Bubble Sort).",
                 "5. Print ordered (some sorting algorithm", "6. Print ordered (another sorting algorithm)\n",
                 "7. Print ordered (every 10th value ascending).", "8. Print ordered (every 10th value descending).",
