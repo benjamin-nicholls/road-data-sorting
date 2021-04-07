@@ -7,12 +7,12 @@ namespace algorithm_assessment_1 {
             List<Road> roads = new List<Road>();
             string[] Filepaths = { "Road_1_256.txt", "Road_2_256.txt", "Road_3_256.txt", "Road_1_2048.txt", "Road_2_2048.txt", "Road_3_2048.txt"};
             string[] MenuOptions = { "0. Exit.", "1. Switch road number.", "2. Print unordered (for reference).",
-                "3. Print ordered (QuickSort).", "4. Print ordered (BubbleSort).",
+                "3. Print ordered (QuickSort).", "4. Print ordered (Bubble Sort).",
                 "5. Print ordered (some sorting algorithm", "6. Print ordered (another sorting algorithm)\n",
                 "7. Print ordered (every 10th value ascending).", "8. Print ordered (every 10th value descending).",
                 "9. Print ordered (every 50th value ascending).", "10. Print ordered (every 50th value descending).\n",
-                "11. Search for a value (return indexes) (binary).", "12. Search for a value (return indexes or nearest) (binary).",
-                "13. Search for a value (return indexes) (sequential).", "14. Search for a value (return indexes or nearest) (sequential)." };
+                "11. Search for a value (return indexes) (Binary Search).", "12. Search for a value (return indexes or nearest) (Binary Search).",
+                "13. Search for a value (return indexes) (Sequential Search).", "14. Search for a value (return indexes or nearest) (Sequential Search)." };
             int UserResponse;
             int UserRoadNumber = 0;
             int NumberToSearchFor;
