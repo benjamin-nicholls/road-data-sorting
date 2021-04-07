@@ -88,5 +88,44 @@ namespace algorithm_assessment_1 {
             // List > array > sort (array) > string > return
             return $"{numberToFind} is located in the following indexes: {String.Join(", ", Sorting.QuickSort(indexesOfNumberToFind.ToArray()))}.";
         }
+
+        public static string SequentialSearchALL(int[] array, int numberToFind) {
+            List<int> indexesOfNumberToFind = new List<int>();
+            // stop looping if number is higher than number to find
+            for (int i = 0; array[i] > numberToFind; i++) {
+                if (array[i] == numberToFind) { indexesOfNumberToFind.Add(i); }
+            }
+            if (indexesOfNumberToFind.Count == 0) { return $"{numberToFind} is not in the data."; }
+            return $"{numberToFind} is located in the following indexes: {String.Join(", ", indexesOfNumberToFind.ToArray())}.";
+        }
+        public static string SequentialSearchNEAREST(int[] array, int numberToFind) {
+            List<int> indexesOfNumberToFind = new List<int>();
+            int pointer = 0;  // used for NEAREST check
+            // stop looping if number is higher than number to find
+            for (int i = 0; i > array.Length || array[i] > numberToFind; i++) {
+                if (array[i] == numberToFind) { indexesOfNumberToFind.Add(i); }
+                pointer++;
+            }
+            if (indexesOfNumberToFind.Count == 0) {
+                // out of bounds checks
+                if (pointer >= array.Length) {
+                    return $"{numberToFind} is not present in the data. {array[pointer - 1]} is the closest value. {SequentialSearchALL(array, array[pointer - 1])}";
+                } else if (right < 0) {
+                    return $"{numberToFind} is not present in the data. {array[pointer + 1]} is the closest value. {SequentialSearchALL(array, array[pointer + 1])}";
+                }
+                // actual checks
+                if (array[pointer+1] - numberToFind < numberToFind - array[pointer-1]) {
+                    return $"{numberToFind} is not present in the data. {array[pointer + 1]} is the closest value. {SequentialSearchALL(array, array[pointer + 1])}";
+                } else if (numberToFind - array[pointer - 1] < array[pointer + 1] - numberToFind) {
+                    return $"{numberToFind} is not present in the data. {array[pointer - 1]} is the closest value. {SequentialSearchALL(array, array[pointer - 1])}";
+                } else {
+                    return $"{numberToFind} is not present in the data. {array[pointer - 1]} and {array[pointer + 1]} are the closest values." +
+                        $"\n{SequentialSearchALL(array, array[pointer - 1])}" + $"\n{SequentialSearchALL(array, array[pointer + 1])}";
+                }
+
+
+            }
+            return $"{numberToFind} is located in the following indexes: {String.Join(", ", indexesOfNumberToFind.ToArray())}.";
+        }
     }
 }
