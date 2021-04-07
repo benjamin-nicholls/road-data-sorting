@@ -37,6 +37,7 @@ namespace algorithm_assessment_1 {
             // List > array > sort (array) > string > return
             return $"{numberToFind} is located in the following indexes: {String.Join(", ", Sorting.QuickSort(indexesOfNumberToFind.ToArray()))}.";
         }
+
         public static string BinarySearchIterativeNEAREST(int[] array, int numberToFind) {
             int left = 0;
             int right = array.Length - 1;
