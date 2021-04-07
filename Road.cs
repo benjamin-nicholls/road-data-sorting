@@ -41,19 +41,13 @@ namespace algorithm_assessment_1 {
                 }
             } catch (System.IO.FileNotFoundException e) {
                 Console.WriteLine($"ERROR: File was not found. '{inputFileName}'.");
-                Console.WriteLine("\nProgram will close.\n\n>>> Waiting for keypress.");
-                Console.ReadKey();
-                Environment.Exit(0);
+                EndProgram();
             } catch (System.IO.DirectoryNotFoundException e) {
                 Console.WriteLine($"ERROR: Directory was not found.");
-                Console.WriteLine("\nProgram will close.\n\n>>> Waiting for keypress.");
-                Console.ReadKey();
-                Environment.Exit(0);
+                EndProgram();
             } catch (System.IO.IOException e) {
                 Console.WriteLine($"ERROR: The file could not be opened.");
-                Console.WriteLine("\nProgram will close.\n\n>>> Waiting for keypress.");
-                Console.ReadKey();
-                Environment.Exit(0);
+                EndProgram();
             }
         }
 
@@ -95,6 +89,12 @@ namespace algorithm_assessment_1 {
         public void FindValueSequentialNEAREST(int NumberToSearchFor) {
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
             Console.WriteLine(Searching.SequentialSearchNEAREST(_dataOrdered, NumberToSearchFor));
+        }
+
+        private void EndProgram() {
+            Console.WriteLine("\nProgram will close.\n\n>>> Waiting for keypress.");
+            Console.ReadKey();
+            Environment.Exit(0);
         }
     }
 }
