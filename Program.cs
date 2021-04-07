@@ -10,7 +10,8 @@ namespace algorithm_assessment_1 {
                 "2. Print unordered (for reference).", "3. Print ordered (QuickSort).",
                 "4. Print ordered (every 10th value ascending).", "5. Print ordered (every 10th value descending).",
                 "6. Print ordered (every 50th value ascending).", "7. Print ordered (every 50th value descending).",
-                "8. Search for a value (return indexes).", "9. Search for a value (return indexes or nearest)" };
+                "8. Search for a value (return indexes).", "9. Search for a value (return indexes or nearest)",
+                "10. Print ordered (BubbleSort).", };
             int UserResponse;
             int UserRoadNumber = 0;
             int NumberToSearchFor;
@@ -100,6 +101,10 @@ namespace algorithm_assessment_1 {
                         NumberToSearchFor = Convert.ToInt16(Console.ReadLine());
                         roads[UserRoadNumber].FindValueNEAREST(NumberToSearchFor);
                         LastAction = $"Searched for {NumberToSearchFor}.";
+                        break;
+                    case 10:  // print ordered bubblesort
+                        roads[UserRoadNumber].PrintRoadDataOrderedBubbleSort();
+                        LastAction = $"Printed road {UserRoadNumber + 1} (ordered by Bubble Sort) to screen.";
                         break;
                     default:
                         LastAction = "ERROR: Invalid input.";
