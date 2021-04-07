@@ -7,7 +7,7 @@ namespace algorithm_assessment_1 {
             List<Road> roads = new List<Road>();
             string[] Filepaths = { "Road_1_256.txt", "Road_2_256.txt", "Road_3_256.txt", "Road_1_2048.txt", "Road_2_2048.txt", "Road_3_2048.txt"};
             string[] MenuOptions = { "0. Exit.", "1. Switch road number.", "2. Print unordered (for reference).\n",
-                "3. Print ordered (QuickSort).", "4. Print ordered (Bubble Sort).",
+                "3. Print ordered (Quick Sort).", "4. Print ordered (Bubble Sort).",
                 "5. Print ordered (Selection Sort)", "6. Print ordered (another sorting algorithm)\n",
                 "7. Print ordered (every 10th value ascending).", "8. Print ordered (every 10th value descending).",
                 "9. Print ordered (every 50th value ascending).", "10. Print ordered (every 50th value descending).\n",
@@ -66,7 +66,7 @@ namespace algorithm_assessment_1 {
                         break;
                     case 3:  // Print ordered (QuickSort).
                         roads[UserRoadNumber].PrintRoadDataOrderedQuickSort();
-                        LastAction = $"Printed road {UserRoadNumber + 1} (ordered by QuickSort) to screen.";
+                        LastAction = $"Printed road {UserRoadNumber + 1} (ordered by Quick Sort) to screen.";
                         Console.WriteLine($"Number of steps taken (QuickSort): {Sorting.GetStepsCounter()}.");
                         break;
                     case 4:  // Print ordered (Bubble Sort).
@@ -97,7 +97,7 @@ namespace algorithm_assessment_1 {
                         roads[UserRoadNumber].PrintRoadDataOrderedQuickSort(-50);
                         LastAction = $"Printed road {UserRoadNumber + 1} (every 50th value descending) to screen.";
                         break;
-                    case 11:  // Search for a value (return indexes) (Binary Search)
+                    case 11:  // Search for a value (return indexes) (Binary Search).
                         Console.WriteLine($"What number do you want to search for?");
                         NumberToSearchFor = GetIntInputFromUser();
                         roads[UserRoadNumber].FindValueBinaryALL(NumberToSearchFor);
