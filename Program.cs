@@ -40,14 +40,10 @@ namespace algorithm_assessment_1 {
                     Console.WriteLine($">>> Last Action: {LastAction}");
                     Console.WriteLine($">>> Selected road: { UserRoadNumber + 1}. {roads[UserRoadNumber].GetName()}.\n");
                     foreach (string option in MenuOptions) { Console.WriteLine("    " + option); }
-                    try {
-                        UserResponse = Convert.ToInt16(Console.ReadLine());
-                        break;
-                    } catch {
-                        LastAction = "ERROR: Invalid input.";
-                    }
+                    UserResponse = GetIntInputFromUser();
+                    if (UserResponse >= 0 && UserResponse <= 14) { break; }
                 }
-                Console.WriteLine();
+                    Console.WriteLine();
                 switch (UserResponse) {
                     case 0:  // Exit.
                         break;
