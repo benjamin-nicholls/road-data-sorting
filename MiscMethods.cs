@@ -23,7 +23,6 @@ namespace algorithm_assessment_1 {
                     counter++;
                 }
             }
-            
         }
 
         public static int[] MergeArrays(int[] array1, int[] array2) {
