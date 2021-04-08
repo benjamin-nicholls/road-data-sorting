@@ -7,7 +7,9 @@ namespace algorithm_assessment_1 {
         private static int _StepsCounter;
         public static int StepsCounter {
             get { return _StepsCounter; }
-            set { _StepsCounter = value; }
+        }
+        public static void ResetStepsCounter() {
+            _StepsCounter = 0;
         }
         public static int[] QuickSort(int[] array) {
             return QuickSort(array, 0, array.Length - 1);

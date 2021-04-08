@@ -44,8 +44,8 @@ namespace algorithm_assessment_1 {
                     if (UserResponse >= 0 && UserResponse <= 14) { break; }
                 }
                 Console.WriteLine();
-                Sorting.StepsCounter = 0;
-                Searching.StepsCounter = 0;
+                Sorting.ResetStepsCounter();
+                Searching.ResetStepsCounter();
                 switch (UserResponse) {
                     case 0:  // Exit.
                         break;

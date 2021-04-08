@@ -6,8 +6,11 @@ namespace algorithm_assessment_1 {
         private static int _StepsCounter;
         public static int StepsCounter {
             get { return _StepsCounter; }
-            set { _StepsCounter = value; }
         }
+        public static void ResetStepsCounter() {
+            _StepsCounter = 0;
+        }
+
         public static string BinarySearchIterativeALL(int[] array, int numberToFind) {
             int left = 0;
             int right = array.Length - 1;
