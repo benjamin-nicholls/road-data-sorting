@@ -5,11 +5,11 @@ using System.Text;
 namespace algorithm_assessment_1 {
     class Sorting {
         private static int _StepsCounter;
-        public static int GetStepsCounter() {
-            return _StepsCounter;
+        public static int StepsCounter {
+            get { return _StepsCounter; }
+            set { _StepsCounter = value; }
         }
         public static int[] QuickSort(int[] array) {
-            _StepsCounter = 0;
             return QuickSort(array, 0, array.Length - 1);
         }
         private static int[] QuickSort(int[] array, int left, int right) {
@@ -34,7 +34,6 @@ namespace algorithm_assessment_1 {
         }
 
         public static int[] BubbleSort(int[] array) {
-            _StepsCounter = 0;
             for (int a = 0; a < array.Length; a++) {
                 for (int b = 0; b < array.Length - 1; b++) {
                     _StepsCounter++;
@@ -49,7 +48,6 @@ namespace algorithm_assessment_1 {
         }
 
         public static int[] SelectionSort(int[] array) {
-            _StepsCounter = 0;
             for (int a = 0; a < array.Length; a++) {
                 int IndexOfSmallestValue = a;
                 // check the rest of the array, anything less than b is already in order

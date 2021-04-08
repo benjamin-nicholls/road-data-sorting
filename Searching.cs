@@ -4,14 +4,14 @@ using System.Collections.Generic;
 namespace algorithm_assessment_1 {
     class Searching {
         private static int _StepsCounter;
-        public static int GetStepsCounter() {
-            return _StepsCounter;
+        public static int StepsCounter {
+            get { return _StepsCounter; }
+            set { _StepsCounter = value; }
         }
         public static string BinarySearchIterativeALL(int[] array, int numberToFind) {
             int left = 0;
             int right = array.Length - 1;
             List<int> indexesOfNumberToFind = new List<int>();
-            _StepsCounter = 0;
             while (left <= right) {
                 _StepsCounter++;
                 int midpoint = (left + right) / 2;
@@ -50,7 +50,6 @@ namespace algorithm_assessment_1 {
             int left = 0;
             int right = array.Length - 1;
             List<int> indexesOfNumberToFind = new List<int>();
-            _StepsCounter = 0;
             while (left <= right) {
                 int midpoint = (left + right) / 2;
                 if (array[midpoint] == numberToFind) {
@@ -102,7 +101,6 @@ namespace algorithm_assessment_1 {
 
         public static string SequentialSearchALL(int[] array, int numberToFind) {
             List<int> indexesOfNumberToFind = new List<int>();
-            _StepsCounter = 0;
             // stop looping if number is higher than number to find
             for (int i = 0; i < array.Length; i++) {
                 if (array[i] > numberToFind ) { break; }
@@ -114,7 +112,6 @@ namespace algorithm_assessment_1 {
         }
         public static string SequentialSearchNEAREST(int[] array, int numberToFind) {
             List<int> indexesOfNumberToFind = new List<int>();
-            _StepsCounter = 0;
             int pointer = 0;  // used for NEAREST check
             // stop looping if number is higher than number to find
             for (int i = 0; i < array.Length; i++) {
