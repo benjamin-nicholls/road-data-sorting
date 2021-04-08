@@ -25,9 +25,9 @@ namespace algorithm_assessment_1 {
 
             // Statement for local variable usage.
             if (true) {
-                Road r1 = new Road("Road_1_256.txt and Road_3_256.txt merged", MiscMethods.MergeArrays(roads[0].GetRoadData(), roads[2].GetRoadData()));
+                Road r1 = new Road("Road_1_256.txt and Road_3_256.txt merged", MiscMethods.MergeArrays(roads[0].DataUnordered, roads[2].DataUnordered));
                 roads.Add(r1);
-                int[] array = MiscMethods.MergeArrays(roads[3].GetRoadData(), roads[4].GetRoadData(), roads[5].GetRoadData());
+                int[] array = MiscMethods.MergeArrays(roads[3].DataUnordered, roads[4].DataUnordered, roads[5].DataUnordered);
                 Road r2 = new Road("Road_1_2048.txt, Road_2_2048.txt, and Road 3_2048.txt merged", array);
                 roads.Add(r2);
             }
@@ -38,7 +38,7 @@ namespace algorithm_assessment_1 {
                     Console.Clear();
                     Console.WriteLine("= = = = = = =  Algorithms and Complexity - Search and Sort Program  = = = = = = =\n");
                     Console.WriteLine($">>> Last Action: {LastAction}");
-                    Console.WriteLine($">>> Selected road: { UserRoadNumber + 1}. {roads[UserRoadNumber].GetName()}.\n");
+                    Console.WriteLine($">>> Selected road: { UserRoadNumber + 1}. {roads[UserRoadNumber].Name}.\n");
                     foreach (string option in MenuOptions) { Console.WriteLine("    " + option); }
                     UserResponse = GetIntInputFromUser();
                     if (UserResponse >= 0 && UserResponse <= 14) { break; }
@@ -51,7 +51,7 @@ namespace algorithm_assessment_1 {
                         break;
                     case 1:  // Switch road number.
                         while (true) {
-                            for (int i =0; i < roads.Count; i++) { Console.WriteLine($"    {i+1}. {roads[i].GetName()}"); }
+                            for (int i =0; i < roads.Count; i++) { Console.WriteLine($"    {i+1}. {roads[i].Name}"); }
                             Console.WriteLine($"\n    Current number of roads: {roads.Count}.\n    Which road would you like to select?");
                             UserRoadNumber = GetIntInputFromUser() - 1;
                             if (UserRoadNumber >= 0 && UserRoadNumber < roads.Count) {

@@ -7,6 +7,13 @@ namespace algorithm_assessment_1 {
         private int[] _dataUnordered;
         private int[] _dataOrdered;
 
+        public string Name { 
+            get { return _name; } 
+        }
+        public int[] DataUnordered {
+            get { return _dataUnordered; }
+        }
+
         public Road(string inputFileName) {
             _name = inputFileName;
             ParseFile(inputFileName);
@@ -20,14 +27,6 @@ namespace algorithm_assessment_1 {
                 _dataUnordered[i] = input[i];
                 _dataOrdered[i] = input[i];
             }
-        }
-
-        public int[] GetRoadData() {
-            return _dataUnordered;
-        }
-
-        public string GetName() {
-            return _name;
         }
 
         private void ParseFile(string inputFileName) {
