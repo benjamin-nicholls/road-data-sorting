@@ -49,8 +49,11 @@ namespace algorithm_assessment_1 {
                     break;
                 }
 
-                if (array[midpoint] < numberToFind) { left = midpoint + 1; }
-                else { right = midpoint - 1; }
+                if (array[midpoint] < numberToFind) {
+                    left = midpoint + 1;
+                } else {
+                    right = midpoint - 1;
+                }
             }
 
             if (indexesOfNumberToFind.Count == 0) {
