@@ -39,6 +39,7 @@ namespace algorithm_assessment_1 {
                 for (int i = 0; i < data.Length; i++) {
                     _dataUnordered[i] = Convert.ToInt32(data[i]);
                 }
+                ResetOrderedData();
             } catch (System.IO.FileNotFoundException) {
                 Console.WriteLine($"ERROR: File was not found. '{inputFileName}'.");
                 EndProgram();
@@ -49,7 +50,7 @@ namespace algorithm_assessment_1 {
                 Console.WriteLine("ERROR: The file could not be opened.");
                 EndProgram();
             }
-            ResetOrderedData();
+            
         }
 
 
