@@ -18,6 +18,7 @@ namespace algorithm_assessment_1 {
             }
         }
 
+
         public static int[] MergeArrays(int[] array1, int[] array2) {
             List<int> list = new List<int>();
             list.AddRange(array1);
