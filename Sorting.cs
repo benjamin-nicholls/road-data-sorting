@@ -38,11 +38,11 @@ namespace algorithm_assessment_1 {
         public static int[] BubbleSort(int[] array) {
             for (int a = 0; a < array.Length; a++) {
                 for (int b = 0; b < array.Length - 1; b++) {
-                    _StepsCounter++;
                     if (array[b] > array[b + 1]) {
                         int temp = array[b + 1];
                         array[b + 1] = array[b];
                         array[b] = temp;
+                        _StepsCounter++;
                     }
                 }
             }
@@ -54,13 +54,13 @@ namespace algorithm_assessment_1 {
                 int IndexOfSmallestValue = a;
                 // check the rest of the array, anything less than b is already in order
                 for (int b = a + 1; b < array.Length; b++) {
-                    _StepsCounter++;
                     if (array[b] < array[IndexOfSmallestValue]) { IndexOfSmallestValue = b; }
                 }
                 if (IndexOfSmallestValue != a) {
                     int temp = array[IndexOfSmallestValue];
                     array[IndexOfSmallestValue] = array[a];
                     array[a] = temp;
+                    _StepsCounter++;
                 }
             }
             return array;

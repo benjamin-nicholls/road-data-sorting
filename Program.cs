@@ -12,25 +12,14 @@ namespace algorithm_assessment_1 {
                 "7. Print ordered (every 10th value ascending).", "8. Print ordered (every 10th value descending).",
                 "9. Print ordered (every 50th value ascending).", "10. Print ordered (every 50th value descending).\n",
                 "11. Search for a value (return indexes) (Binary Search).", "12. Search for a value (return indexes or nearest) (Binary Search).",
-                "13. Search for a value (return indexes) (Sequential Search).", "14. Search for a value (return indexes or nearest) (Sequential Search)." };
+                "13. Search for a value (return indexes) (Sequential Search).", "14. Search for a value (return indexes or nearest) (Sequential Search).\n",
+                "15. Re-read road data (needed for accurate step counts)." };
             int UserResponse;
             int UserRoadNumber = 0;
             int NumberToSearchFor;
             string LastAction = "Program started.";
 
-            foreach (string filePath in Filepaths) {
-                Road r = new Road(filePath);
-                roads.Add(r);
-            }
-
-            // Statement for local variable usage.
-            if (true) {
-                Road r1 = new Road("Road_1_256.txt and Road_3_256.txt merged", MiscMethods.MergeArrays(roads[0].DataUnordered, roads[2].DataUnordered));
-                roads.Add(r1);
-                int[] array = MiscMethods.MergeArrays(roads[3].DataUnordered, roads[4].DataUnordered, roads[5].DataUnordered);
-                Road r2 = new Road("Road_1_2048.txt, Road_2_2048.txt, and Road 3_2048.txt merged", array);
-                roads.Add(r2);
-            }
+            GetRoadData(roads, Filepaths);
 
             // Main loop.
             do {
@@ -41,7 +30,7 @@ namespace algorithm_assessment_1 {
                     Console.WriteLine($">>> Selected road: { UserRoadNumber + 1}. {roads[UserRoadNumber].Name}.\n");
                     foreach (string option in MenuOptions) { Console.WriteLine("    " + option); }
                     UserResponse = GetIntInputFromUser();
-                    if (UserResponse >= 0 && UserResponse <= 14) { break; }
+                    if (UserResponse >= 0 && UserResponse <= 15) { break; }
                 }
                 Console.WriteLine();
                 Sorting.ResetStepsCounter();
@@ -120,13 +109,17 @@ namespace algorithm_assessment_1 {
                         roads[UserRoadNumber].FindValueSequentialNEAREST(NumberToSearchFor);
                         LastAction = $"Searched for {NumberToSearchFor} (Sequential Search).";
                         break;
+                    case 15:
+                        GetRoadData(roads, Filepaths);
+                        LastAction = $"Re-loaded road data.";
+                        break;
                     default:
                         LastAction = "ERROR: Invalid input.";
                         break;
                 }
 
                 if (UserResponse != 0) {
-                    if (UserResponse > 2) { Console.WriteLine($"Number of steps taken Sorting: {Sorting.StepsCounter}, Searching: {Searching.StepsCounter}.\n"); }
+                    if (UserResponse > 2 && UserResponse != 15) { Console.WriteLine($"Number of steps taken Sorting: {Sorting.StepsCounter}, Searching: {Searching.StepsCounter}.\n"); }
                     Console.WriteLine("\n>>> Waiting for keypress.");
                     Console.ReadKey();
                 }
@@ -144,6 +137,20 @@ namespace algorithm_assessment_1 {
                 }
             }
             return input;
+        }
+
+        private static void GetRoadData(List<Road> roads, string[] Filepaths) {
+            while (roads.Count > 0) { roads.RemoveAt(roads.Count - 1); }
+            foreach (string filePath in Filepaths) {
+                Road r = new Road(filePath);
+                roads.Add(r);
+            }
+            Road r1 = new Road("Road_1_256.txt and Road_3_256.txt merged", MiscMethods.MergeArrays(roads[0].DataUnordered, roads[2].DataUnordered));
+            roads.Add(r1);
+            int[] array = MiscMethods.MergeArrays(roads[3].DataUnordered, roads[4].DataUnordered, roads[5].DataUnordered);
+            Road r2 = new Road("Road_1_2048.txt, Road_2_2048.txt, and Road 3_2048.txt merged", array);
+            roads.Add(r2);
+            
         }
     }
 }

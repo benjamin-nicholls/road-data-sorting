@@ -55,8 +55,7 @@ namespace algorithm_assessment_1 {
         }
 
         public void PrintRoadDataOrderedQuickSort() {
-            _dataOrdered = Sorting.QuickSort(_dataOrdered);
-            MiscMethods.PrintIntArrayToScreen(_dataOrdered);
+            PrintRoadDataOrderedQuickSort(1);
         }
         public void PrintRoadDataOrderedQuickSort(int everyNthValue) {
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
@@ -64,8 +63,7 @@ namespace algorithm_assessment_1 {
         }
 
         public void PrintRoadDataOrderedBubbleSort() {
-            _dataOrdered = Sorting.BubbleSort(_dataOrdered);
-            MiscMethods.PrintIntArrayToScreen(_dataOrdered);
+            PrintRoadDataOrderedBubbleSort(1);
         }
         public void PrintRoadDataOrderedBubbleSort(int everyNthValue) {
             _dataOrdered = Sorting.BubbleSort(_dataOrdered);
@@ -73,8 +71,7 @@ namespace algorithm_assessment_1 {
         }
 
         public void PrintRoadDataOrderedSelectionSort() {
-            _dataOrdered = Sorting.SelectionSort(_dataOrdered);
-            MiscMethods.PrintIntArrayToScreen(_dataOrdered);
+            PrintRoadDataOrderedSelectionSort(1);
         }
         public void PrintRoadDataOrderedSelectionSort(int everyNthValue) {
             _dataOrdered = Sorting.SelectionSort(_dataOrdered);

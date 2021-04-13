@@ -8,18 +8,12 @@ namespace algorithm_assessment_1 {
         }
         public static void PrintIntArrayToScreen(int[] array, int everyNthValue) {
             if (everyNthValue > 0) {
-                for (int i = 0; i < array.Length; i++) {
-                    if ((i + 1) % everyNthValue == 0) {
-                        Console.WriteLine(array[i]);
-                    }
+                for (int i = 0; i < array.Length; i += everyNthValue) {
+                    Console.WriteLine(array[i]);
                 }
-            } else {  // negative numbers allow descending iteration
-                int counter = 1;
-                for (int i = array.Length - 1; i >= 0; i--) {
-                    if (counter % -everyNthValue == 0) {
-                        Console.WriteLine(array[i]);
-                    }
-                    counter++;
+            } else {
+                for (int i = array.Length - 1; i >= 0; i -= everyNthValue) {
+                    Console.WriteLine(array[i]);
                 }
             }
         }
