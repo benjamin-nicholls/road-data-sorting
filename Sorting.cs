@@ -84,13 +84,66 @@ namespace algorithm_assessment_1 {
         }
 
 
-        public static int[] sorting(int[] array) {
+        public static int[] MergeSort(int[] array) {
+            List<int> tempList = new List<int>();
+            foreach (int n in array) {
+                tempList.Add(n);
+            }
+            return MergeSort(tempList).ToArray();
+        }
 
+        private static List<int> MergeSort(List<int> list) {
+            if (list.Count < 2) {
+                return list;
+            }
 
+            List<int> left = new List<int>();
+            List<int> right = new List<int>();
+            int midpoint = list.Count / 2;
 
+            for (int i = 0; i < midpoint; i++) {
+                left.Add(list[i]);
+                _StepsCounter++;
+            }
 
+            for (int i = midpoint; i < list.Count; i++) {
+                right.Add(list[i]);
+                _StepsCounter++;
+            }
 
-            return array;
+            left = MergeSort(left);
+            right = MergeSort(right);
+            return Merge(left, right);
+        }
+
+        private static List<int> Merge(List<int> left, List<int> right) {
+            List<int> result = new List<int>();
+
+            while (left.Count > 0 || right.Count > 0) {
+                if (left.Count > 0 && right.Count > 0) {
+
+                    if (left[0] <= right[0]) {
+                        result.Add(left[0]);
+                        left.RemoveAt(0);
+                        _StepsCounter++;
+                    } else {
+                        result.Add(right[0]);
+                        right.RemoveAt(0);
+                        _StepsCounter++;
+                    }
+
+                } else if (left.Count > 0) {
+                    result.Add(left[0]);
+                    left.RemoveAt(0);
+                    _StepsCounter++;
+
+                } else if (right.Count > 0) {
+                    result.Add(right[0]);
+                    right.RemoveAt(0);
+                    _StepsCounter++;
+                }
+            }
+            return result;
         }
     }
 }

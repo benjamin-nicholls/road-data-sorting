@@ -88,7 +88,7 @@ namespace algorithm_assessment_1 {
         }
 
 
-        // Bubble
+        // Bubble Sort
         public void PrintRoadDataOrderedBubbleSort() {
             PrintRoadDataOrderedBubbleSort(1);
         }
@@ -100,7 +100,7 @@ namespace algorithm_assessment_1 {
         }
 
 
-        // Selection
+        // Selection Sort
         public void PrintRoadDataOrderedSelectionSort() {
             PrintRoadDataOrderedSelectionSort(1);
         }
@@ -112,7 +112,19 @@ namespace algorithm_assessment_1 {
         }
 
 
-        // Binary
+        // Merge Sort
+        public void PrintRoadDataOrderedMergeSort() {
+            PrintRoadDataOrderedMergeSort(1);
+        }
+
+        public void PrintRoadDataOrderedMergeSort(int everyNthValue) {
+            ResetOrderedData();
+            _dataOrdered = Sorting.MergeSort(_dataOrdered);
+            MiscMethods.PrintIntArrayToScreen(_dataOrdered, everyNthValue);
+        }
+
+
+        // Binary Search
         public void FindValueBinaryALL(int NumberToSearchFor) {
             ResetOrderedData();
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
@@ -126,7 +138,7 @@ namespace algorithm_assessment_1 {
         }
 
 
-        // Sequential
+        // Sequential Search
         public void FindValueSequentialALL(int NumberToSearchFor) {
             ResetOrderedData();
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
