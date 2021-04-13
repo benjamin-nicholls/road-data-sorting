@@ -23,7 +23,7 @@ namespace algorithm_assessment_1 {
             while (a <= b) {
                 while (array[a] < pivot) { a++; }
                 while (array[b] > pivot) { b--; }
-                if ( a <= b) {
+                if (a <= b) {
                     var temp = array[a];
                     array[a] = array[b];
                     array[b] = temp;

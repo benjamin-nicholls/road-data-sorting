@@ -43,9 +43,13 @@ namespace algorithm_assessment_1 {
 
                     case 1:  // Switch road number.
                         while (true) {
-                            for (int i =0; i < roads.Count; i++) { Console.WriteLine($"    {i+1}. {roads[i].Name}"); }
+                            for (int i = 0; i < roads.Count; i++) {
+                                Console.WriteLine($"    {i+1}. {roads[i].Name}");
+                            }
+
                             Console.WriteLine($"\n    Current number of roads: {roads.Count}.\n    Which road would you like to select?");
                             UserRoadNumber = GetIntInputFromUser() - 1;
+
                             if (UserRoadNumber >= 0 && UserRoadNumber < roads.Count) {
                                 LastAction = $"Changed selected road to road {UserRoadNumber + 1}.";
                                 break;
