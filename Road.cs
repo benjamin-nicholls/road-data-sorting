@@ -29,6 +29,7 @@ namespace algorithm_assessment_1 {
             }
         }
 
+
         private void ParseFile(string inputFileName) {
             try {
                 string[] data = System.IO.File.ReadAllLines(inputFileName);
@@ -42,17 +43,19 @@ namespace algorithm_assessment_1 {
                 Console.WriteLine($"ERROR: File was not found. '{inputFileName}'.");
                 EndProgram();
             } catch (System.IO.DirectoryNotFoundException e) {
-                Console.WriteLine($"ERROR: Directory was not found.");
+                Console.WriteLine("ERROR: Directory was not found.");
                 EndProgram();
             } catch (System.IO.IOException e) {
-                Console.WriteLine($"ERROR: The file could not be opened.");
+                Console.WriteLine("ERROR: The file could not be opened.");
                 EndProgram();
             }
         }
 
+
         public void PrintRoadDataUnordered() {
             MiscMethods.PrintIntArrayToScreen(_dataUnordered);
         }
+
 
         public void PrintRoadDataOrderedQuickSort() {
             PrintRoadDataOrderedQuickSort(1);
@@ -62,6 +65,7 @@ namespace algorithm_assessment_1 {
             MiscMethods.PrintIntArrayToScreen(_dataOrdered, everyNthValue);
         }
 
+
         public void PrintRoadDataOrderedBubbleSort() {
             PrintRoadDataOrderedBubbleSort(1);
         }
@@ -70,6 +74,7 @@ namespace algorithm_assessment_1 {
             MiscMethods.PrintIntArrayToScreen(_dataOrdered, everyNthValue);
         }
 
+
         public void PrintRoadDataOrderedSelectionSort() {
             PrintRoadDataOrderedSelectionSort(1);
         }
@@ -77,6 +82,7 @@ namespace algorithm_assessment_1 {
             _dataOrdered = Sorting.SelectionSort(_dataOrdered);
             MiscMethods.PrintIntArrayToScreen(_dataOrdered, everyNthValue);
         }
+
 
         public void FindValueBinaryALL(int NumberToSearchFor) {
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
@@ -87,6 +93,7 @@ namespace algorithm_assessment_1 {
             Console.WriteLine(Searching.BinarySearchIterativeNEAREST(_dataOrdered, NumberToSearchFor));
         }
 
+
         public void FindValueSequentialALL(int NumberToSearchFor) {
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
             Console.WriteLine(Searching.SequentialSearchALL(_dataOrdered, NumberToSearchFor));
@@ -96,10 +103,12 @@ namespace algorithm_assessment_1 {
             Console.WriteLine(Searching.SequentialSearchNEAREST(_dataOrdered, NumberToSearchFor));
         }
 
+
         private void EndProgram() {
             Console.WriteLine("\nProgram will close.\n\n>>> Waiting for keypress.");
             Console.ReadKey();
             Environment.Exit(0);
         }
+
     }
 }
