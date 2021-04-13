@@ -8,6 +8,8 @@ namespace algorithm_assessment_1 {
         public static int StepsCounter {
             get { return _StepsCounter; }
         }
+
+
         public static void ResetStepsCounter() {
             _StepsCounter = 0;
         }
@@ -16,6 +18,7 @@ namespace algorithm_assessment_1 {
         public static int[] QuickSort(int[] array) {
             return QuickSort(array, 0, array.Length - 1);
         }
+
         private static int[] QuickSort(int[] array, int left, int right) {
             var pivot = array[(left + right) / 2];
             int a = left;

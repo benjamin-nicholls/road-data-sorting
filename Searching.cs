@@ -147,6 +147,8 @@ namespace algorithm_assessment_1 {
             }
             return String.Format("{0} is located in the following indexes: {1}.", numberToFind, String.Join(", ", indexesOfNumberToFind.ToArray()));
         }
+
+
         public static string SequentialSearchNEAREST(int[] array, int numberToFind) {
             List<int> indexesOfNumberToFind = new List<int>();
             int pointer = 0;  // Used for NEAREST check later.

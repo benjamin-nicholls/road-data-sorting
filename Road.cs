@@ -14,6 +14,7 @@ namespace algorithm_assessment_1 {
             get { return _dataUnordered; }
         }
 
+
         public Road(string inputFileName) {
             _name = inputFileName;
             ParseFile(inputFileName);
@@ -28,6 +29,7 @@ namespace algorithm_assessment_1 {
                 _dataOrdered[i] = input[i];
             }
         }
+
 
         private void ParseFile(string inputFileName) {
             try {
@@ -50,6 +52,7 @@ namespace algorithm_assessment_1 {
             ResetOrderedData();
         }
 
+
         public void ResetOrderedData() {
             List<int> tempList = new List<int>();
             foreach (int n in _dataUnordered) {
@@ -59,9 +62,11 @@ namespace algorithm_assessment_1 {
             _dataOrdered = tempArray;
         }
 
+
         public void PrintRoadDataUnordered() {
             MiscMethods.PrintIntArrayToScreen(_dataUnordered);
         }
+
 
         private void EndProgram() {
             Console.WriteLine("\nProgram will close.\n\n>>> Waiting for keypress.");
@@ -74,6 +79,7 @@ namespace algorithm_assessment_1 {
         public void PrintRoadDataOrderedQuickSort() {
             PrintRoadDataOrderedQuickSort(1);
         }
+
         public void PrintRoadDataOrderedQuickSort(int everyNthValue) {
             ResetOrderedData();
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
@@ -85,6 +91,7 @@ namespace algorithm_assessment_1 {
         public void PrintRoadDataOrderedBubbleSort() {
             PrintRoadDataOrderedBubbleSort(1);
         }
+
         public void PrintRoadDataOrderedBubbleSort(int everyNthValue) {
             ResetOrderedData();
             _dataOrdered = Sorting.BubbleSort(_dataOrdered);
@@ -96,6 +103,7 @@ namespace algorithm_assessment_1 {
         public void PrintRoadDataOrderedSelectionSort() {
             PrintRoadDataOrderedSelectionSort(1);
         }
+
         public void PrintRoadDataOrderedSelectionSort(int everyNthValue) {
             ResetOrderedData();
             _dataOrdered = Sorting.SelectionSort(_dataOrdered);
@@ -109,6 +117,7 @@ namespace algorithm_assessment_1 {
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
             Console.WriteLine(Searching.BinarySearchIterativeALL(_dataOrdered, NumberToSearchFor));
         }
+
         public void FindValueBinaryNEAREST(int NumberToSearchFor) {
             ResetOrderedData();
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
@@ -122,11 +131,11 @@ namespace algorithm_assessment_1 {
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
             Console.WriteLine(Searching.SequentialSearchALL(_dataOrdered, NumberToSearchFor));
         }
+
         public void FindValueSequentialNEAREST(int NumberToSearchFor) {
             ResetOrderedData();
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
             Console.WriteLine(Searching.SequentialSearchNEAREST(_dataOrdered, NumberToSearchFor));
         }
-
     }
 }

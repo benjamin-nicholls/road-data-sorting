@@ -6,6 +6,7 @@ namespace algorithm_assessment_1 {
         public static void PrintIntArrayToScreen(int[] array) {
             PrintIntArrayToScreen(array, 1);
         }
+
         public static void PrintIntArrayToScreen(int[] array, int everyNthValue) {
             if (everyNthValue > 0) {
                 for (int i = 0; i < array.Length; i += everyNthValue) {
