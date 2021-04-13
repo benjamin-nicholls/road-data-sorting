@@ -13,7 +13,7 @@ namespace algorithm_assessment_1 {
                 "9. Print ordered (every 50th value ascending).", "10. Print ordered (every 50th value descending).\n",
                 "11. Search for a value (return indexes) (Binary Search).", "12. Search for a value (return indexes or nearest) (Binary Search).",
                 "13. Search for a value (return indexes) (Sequential Search).", "14. Search for a value (return indexes or nearest) (Sequential Search).\n",
-                "15. Re-read road data (needed for accurate step counts)." };
+            };
             int UserResponse;
             int UserRoadNumber = 0;
             int NumberToSearchFor;
@@ -141,7 +141,9 @@ namespace algorithm_assessment_1 {
                 }
 
                 if (UserResponse != 0) {
-                    if (UserResponse > 2 && UserResponse != 15) { Console.WriteLine($"Number of steps taken Sorting: {Sorting.StepsCounter}, Searching: {Searching.StepsCounter}.\n"); }
+                    if (UserResponse > 2) {
+                        Console.WriteLine(String.Format("Number of steps taken Sorting: {0}, Searching: {1}.\n", Sorting.StepsCounter, Searching.StepsCounter));
+                    }
                     Console.WriteLine("\n>>> Waiting for keypress.");
                     Console.ReadKey();
                 }
