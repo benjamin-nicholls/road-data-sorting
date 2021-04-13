@@ -138,7 +138,9 @@ namespace algorithm_assessment_1 {
             // Stop looping if number is higher than numberToFind.
             for (int i = 0; i < array.Length; i++) {
                 if (array[i] > numberToFind ) { break; }
-                if (array[i] == numberToFind) { indexesOfNumberToFind.Add(i); }
+                if (array[i] == numberToFind) {
+                    indexesOfNumberToFind.Add(i);
+                }
                 _StepsCounter++;
             }
 
@@ -156,7 +158,9 @@ namespace algorithm_assessment_1 {
             // Stop looping if number is higher than numberToFind.
             for (int i = 0; i < array.Length; i++) {
                 if (array[i] > numberToFind) { break; }
-                if (array[i] == numberToFind) { indexesOfNumberToFind.Add(i); }
+                if (array[i] == numberToFind) {
+                    indexesOfNumberToFind.Add(i);
+                }
                 pointer++;
                 _StepsCounter++;
             }

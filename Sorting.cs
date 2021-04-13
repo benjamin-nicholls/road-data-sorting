@@ -9,7 +9,7 @@ namespace algorithm_assessment_1 {
             get { return _StepsCounter; }
         }
 
-
+        
         public static void ResetStepsCounter() {
             _StepsCounter = 0;
         }
@@ -24,8 +24,12 @@ namespace algorithm_assessment_1 {
             int a = left;
             int b = right;
             while (a <= b) {
-                while (array[a] < pivot) { a++; }
-                while (array[b] > pivot) { b--; }
+                while (array[a] < pivot) {
+                    a++;
+                }
+                while (array[b] > pivot) {
+                    b--;
+                }
                 if (a <= b) {
                     var temp = array[a];
                     array[a] = array[b];
@@ -35,8 +39,12 @@ namespace algorithm_assessment_1 {
                     _StepsCounter++;
                 }
             }
-            if (left < b) { array = QuickSort(array, left, b);  }
-            if (a < right) { array = QuickSort(array, a, right); }
+            if (left < b) {
+                array = QuickSort(array, left, b); 
+            }
+            if (a < right) {
+                array = QuickSort(array, a, right);
+            }
             return array;
         }
 
@@ -61,7 +69,9 @@ namespace algorithm_assessment_1 {
                 int IndexOfSmallestValue = a;
                 // check the rest of the array, anything less than b is already in order
                 for (int b = a + 1; b < array.Length; b++) {
-                    if (array[b] < array[IndexOfSmallestValue]) { IndexOfSmallestValue = b; }
+                    if (array[b] < array[IndexOfSmallestValue]) {
+                        IndexOfSmallestValue = b;
+                    }
                 }
                 if (IndexOfSmallestValue != a) {
                     int temp = array[IndexOfSmallestValue];
@@ -70,6 +80,16 @@ namespace algorithm_assessment_1 {
                     _StepsCounter++;
                 }
             }
+            return array;
+        }
+
+
+        public static int[] sorting(int[] array) {
+
+
+
+
+
             return array;
         }
     }

@@ -28,9 +28,11 @@ namespace algorithm_assessment_1 {
                     Console.WriteLine("= = = = = = =  Algorithms and Complexity - Search and Sort Program  = = = = = = =\n");
                     Console.WriteLine($">>> Last Action: {LastAction}");
                     Console.WriteLine($">>> Selected road: { UserRoadNumber + 1}. {roads[UserRoadNumber].Name}.\n");
-                    foreach (string option in MenuOptions) { Console.WriteLine("    " + option); }
+                    foreach (string option in MenuOptions) {
+                        Console.WriteLine("    " + option);
+                    }
                     UserResponse = GetIntInputFromUser();
-                    if (UserResponse >= 0 && UserResponse <= 15) { break; }
+                    if (UserResponse >= 0) { break; }
                 }
 
                 Console.WriteLine();
@@ -130,11 +132,6 @@ namespace algorithm_assessment_1 {
                         LastAction = $"Searched for {NumberToSearchFor} (Sequential Search).";
                         break;
 
-                    case 15:
-                        GetRoadData(roads, Filepaths);
-                        LastAction = $"Re-loaded road data.";
-                        break;
-
                     default:
                         LastAction = "ERROR: Invalid input.";
                         break;
@@ -167,7 +164,9 @@ namespace algorithm_assessment_1 {
 
 
         private static void GetRoadData(List<Road> roads, string[] Filepaths) {
-            while (roads.Count > 0) { roads.RemoveAt(roads.Count - 1); }
+            while (roads.Count > 0) {
+                roads.RemoveAt(roads.Count - 1);
+            }
             foreach (string filePath in Filepaths) {
                 Road r = new Road(filePath);
                 roads.Add(r);
