@@ -11,6 +11,7 @@ namespace algorithm_assessment_1 {
             _StepsCounter = 0;
         }
 
+        // Return results only for numberToFind.
         public static string BinarySearchIterativeALL(int[] array, int numberToFind) {
             int left = 0;
             int right = array.Length - 1;
@@ -20,7 +21,7 @@ namespace algorithm_assessment_1 {
                 int midpoint = (left + right) / 2;
                 if (array[midpoint] == numberToFind) {
                     indexesOfNumberToFind.Add(midpoint);
-                    // Search left and right of midpoint sequentially for any other instance of numberToFind
+                    // Search left and right of midpoint sequentially for any other instance of numberToFind.
                     int pointer = midpoint - 1;
                     if (pointer >= 0) {
                         while (array[pointer] == numberToFind) {
@@ -49,6 +50,7 @@ namespace algorithm_assessment_1 {
             return $"{numberToFind} is located in the following indexes: {String.Join(", ", Sorting.QuickSort(indexesOfNumberToFind.ToArray()))}.";
         }
 
+        // Return results for numberToFind unless there is none, then return results for nearest value(s).
         public static string BinarySearchIterativeNEAREST(int[] array, int numberToFind) {
             int left = 0;
             int right = array.Length - 1;
@@ -57,7 +59,7 @@ namespace algorithm_assessment_1 {
                 int midpoint = (left + right) / 2;
                 if (array[midpoint] == numberToFind) {
                     indexesOfNumberToFind.Add(midpoint);
-                    // Search left and right of midpoint sequentially for any other instance of numberToFind
+                    // Search left and right of midpoint sequentially for any other instance of numberToFind.
                     int pointer = midpoint - 1;
                     if (pointer >= 0) {
                         while (array[pointer] == numberToFind) {
@@ -82,13 +84,13 @@ namespace algorithm_assessment_1 {
                 else { right = midpoint - 1; }
             }
             if (indexesOfNumberToFind.Count == 0) {
-                // out of bounds checks
+                // Edge cases / out of bounds checks.
                 if (left >= array.Length) {
                     return $"{numberToFind} is not present in the data. {array[right]} is the closest value. {BinarySearchIterativeALL(array, array[right])}";
                 } else if (right < 0) {
                     return $"{numberToFind} is not present in the data. {array[left]} is the closest value. {BinarySearchIterativeALL(array, array[left])}";
                 }
-                // actual checks
+                // Regular checks.
                 if (array[left] - numberToFind < numberToFind - array[right]) {
                     return $"{numberToFind} is not present in the data. {array[left]} is the closest value. {BinarySearchIterativeALL(array, array[left])}";
                 } else if (numberToFind - array[right] < array[left] - numberToFind) {
@@ -98,13 +100,13 @@ namespace algorithm_assessment_1 {
                         $"\n{BinarySearchIterativeALL(array, array[right])}" + $"\n{BinarySearchIterativeALL(array, array[left])}";
                 }
             }
-            // List > array > sort (array) > string > return
+            // List > array > sort (array) > string > return.
             return $"{numberToFind} is located in the following indexes: {String.Join(", ", Sorting.QuickSort(indexesOfNumberToFind.ToArray()))}.";
         }
 
         public static string SequentialSearchALL(int[] array, int numberToFind) {
             List<int> indexesOfNumberToFind = new List<int>();
-            // stop looping if number is higher than number to find
+            // Stop looping if number is higher than numberToFind.
             for (int i = 0; i < array.Length; i++) {
                 if (array[i] > numberToFind ) { break; }
                 if (array[i] == numberToFind) { indexesOfNumberToFind.Add(i); }
@@ -115,8 +117,8 @@ namespace algorithm_assessment_1 {
         }
         public static string SequentialSearchNEAREST(int[] array, int numberToFind) {
             List<int> indexesOfNumberToFind = new List<int>();
-            int pointer = 0;  // used for NEAREST check
-            // stop looping if number is higher than number to find
+            int pointer = 0;  // Used for NEAREST check later.
+            // Stop looping if number is higher than numberToFind.
             for (int i = 0; i < array.Length; i++) {
                 if (array[i] > numberToFind) { break; }
                 if (array[i] == numberToFind) { indexesOfNumberToFind.Add(i); }
@@ -124,13 +126,13 @@ namespace algorithm_assessment_1 {
                 _StepsCounter++;
             }
             if (indexesOfNumberToFind.Count == 0) {
-                // out of bounds checks
+                // Edge cases / out of bounds checks.
                 if (pointer + 1 >= array.Length) {
                     return $"{numberToFind} is not present in the data. {array[pointer - 1]} is the closest value. {SequentialSearchALL(array, array[pointer - 1])}";
                 } else if (pointer - 1 < 0) {
                     return $"{numberToFind} is not present in the data. {array[pointer + 1]} is the closest value. {SequentialSearchALL(array, array[pointer + 1])}";
                 }
-                // actual checks
+                // Regular checks.
                 if (array[pointer + 1] - numberToFind < numberToFind - array[pointer - 1]) {
                     return $"{numberToFind} is not present in the data. {array[pointer + 1]} is the closest value. {SequentialSearchALL(array, array[pointer + 1])}";
                 } else if (numberToFind - array[pointer - 1] < array[pointer + 1] - numberToFind) {
