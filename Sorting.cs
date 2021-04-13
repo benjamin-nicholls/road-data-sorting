@@ -11,6 +11,8 @@ namespace algorithm_assessment_1 {
         public static void ResetStepsCounter() {
             _StepsCounter = 0;
         }
+
+
         public static int[] QuickSort(int[] array) {
             return QuickSort(array, 0, array.Length - 1);
         }
@@ -35,6 +37,7 @@ namespace algorithm_assessment_1 {
             return array;
         }
 
+
         public static int[] BubbleSort(int[] array) {
             for (int a = 0; a < array.Length; a++) {
                 for (int b = 0; b < array.Length - 1; b++) {
@@ -48,6 +51,7 @@ namespace algorithm_assessment_1 {
             }
             return array;
         }
+
 
         public static int[] SelectionSort(int[] array) {
             for (int a = 0; a < array.Length; a++) {
