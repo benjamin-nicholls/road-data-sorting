@@ -13,7 +13,7 @@ namespace algorithm_assessment_1 {
                     Console.WriteLine(array[i]);
                 }
             } else {  // Negative everyNthValue allows for descending
-                for (int i = array.Length - 1; i >= 0; i -= everyNthValue) {
+                for (int i = array.Length - 1; i >= 0; i += everyNthValue) {
                     Console.WriteLine(array[i]);
                 }
             }

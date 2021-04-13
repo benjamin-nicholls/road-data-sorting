@@ -81,7 +81,7 @@ namespace algorithm_assessment_1 {
                         LastAction = $"Printed road {UserRoadNumber + 1} (ordered by Selection Sort) to screen.";
                         break;
 
-                    case 6:
+                    case 6:  // Print ordered (Merge Sort).
                         roads[UserRoadNumber].PrintRoadDataOrderedMergeSort();
                         LastAction = $"Printed road {UserRoadNumber + 1} (ordered by Merge Sort) to screen.";
                         break;
