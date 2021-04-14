@@ -67,7 +67,7 @@ namespace algorithm_assessment_1 {
         public static int[] SelectionSort(int[] array) {
             for (int a = 0; a < array.Length; a++) {
                 int IndexOfSmallestValue = a;
-                // check the rest of the array, anything less than b is already in order
+                // Check the rest of the array, anything less than b is already in order.
                 for (int b = a + 1; b < array.Length; b++) {
                     if (array[b] < array[IndexOfSmallestValue]) {
                         IndexOfSmallestValue = b;

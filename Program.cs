@@ -176,7 +176,7 @@ namespace algorithm_assessment_1 {
             Road r1 = new Road("Road_1_256.txt and Road_3_256.txt merged", MiscMethods.MergeArrays(roads[0].DataUnordered, roads[2].DataUnordered));
             roads.Add(r1);
             int[] array = MiscMethods.MergeArrays(roads[3].DataUnordered, roads[4].DataUnordered, roads[5].DataUnordered);
-            Road r2 = new Road("Road_1_2048.txt, Road_2_2048.txt, and Road 3_2048.txt merged", array);
+            Road r2 = new Road("Road_1_2048.txt, Road_2_2048.txt, and Road_3_2048.txt merged", array);
             roads.Add(r2);
         }
 
