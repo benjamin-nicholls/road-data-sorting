@@ -8,11 +8,12 @@ namespace algorithm_assessment_1 {
             string[] Filepaths = { "Road_1_256.txt", "Road_2_256.txt", "Road_3_256.txt", "Road_1_2048.txt", "Road_2_2048.txt", "Road_3_2048.txt"};
             string[] MenuOptions = { "0. Exit.", "1. Switch road number.", "2. Print unordered (for reference).\n",
                 "3. Print ordered (Quick Sort).", "4. Print ordered (Bubble Sort).",
-                "5. Print ordered (Selection Sort)", "6. Print ordered (Merge Sort)\n",
-                "7. Print ordered (every 10th value ascending).", "8. Print ordered (every 10th value descending).",
-                "9. Print ordered (every 50th value ascending).", "10. Print ordered (every 50th value descending).\n",
-                "11. Search for a value (return indexes) (Binary Search).", "12. Search for a value (return indexes or nearest) (Binary Search).",
-                "13. Search for a value (return indexes) (Sequential Search).", "14. Search for a value (return indexes or nearest) (Sequential Search).\n",
+                "5. Print ordered (Selection Sort)", "6. Print ordered (Merge Sort)",
+                "7. Print ordered (Insersion Sort)\n",
+                "8. Print ordered (every 10th value ascending).", "9. Print ordered (every 10th value descending).",
+                "10. Print ordered (every 50th value ascending).", "11. Print ordered (every 50th value descending).\n",
+                "12. Search for a value (return indexes) (Binary Search).", "13. Search for a value (return indexes or nearest) (Binary Search).",
+                "14. Search for a value (return indexes) (Sequential Search).", "15. Search for a value (return indexes or nearest) (Sequential Search).\n",
             };
             int UserResponse;
             int UserRoadNumber = 0;
@@ -32,7 +33,7 @@ namespace algorithm_assessment_1 {
                         Console.WriteLine("    " + option);
                     }
                     UserResponse = GetIntInputFromUser();
-                    if (UserResponse >= 0) { break; }
+                    if (UserResponse >= 0 && UserResponse < 16) { break; }
                 }
 
                 Console.WriteLine();
@@ -86,53 +87,60 @@ namespace algorithm_assessment_1 {
                         LastAction = $"Printed road {UserRoadNumber + 1} (ordered by Merge Sort) to screen.";
                         break;
 
-                    case 7:  // Print ordered (every 10th value ascending).
+                    case 7:  // Print ordered (Insertion Sort).
+                        roads[UserRoadNumber].PrintRoadDataOrderedInsertionSort();
+                        LastAction = $"Printed road {UserRoadNumber + 1} (ordered by Insertion Sort) to screen.";
+                        break;
+
+                    case 8:  // Print ordered (every 10th value ascending).
                         roads[UserRoadNumber].PrintRoadDataOrderedQuickSort(10);
                         LastAction = $"Printed road {UserRoadNumber + 1} (every 10th value ascending) to screen.";
                         break;
 
-                    case 8:  // Print ordered (every 10th value descending).
+                    case 9:  // Print ordered (every 10th value descending).
                         roads[UserRoadNumber].PrintRoadDataOrderedQuickSort(-10);
                         LastAction = $"Printed road {UserRoadNumber + 1} (every 10th value descending) to screen.";
                         break;
 
-                    case 9:  // Print ordered (every 50th value ascending).
+                    case 10:  // Print ordered (every 50th value ascending).
                         roads[UserRoadNumber].PrintRoadDataOrderedQuickSort(50);
                         LastAction = $"Printed road {UserRoadNumber + 1} (every 50th value ascending) to screen.";
                         break;
 
-                    case 10:  // Print ordered (every 50th value descending).
+                    case 11:  // Print ordered (every 50th value descending).
                         roads[UserRoadNumber].PrintRoadDataOrderedQuickSort(-50);
                         LastAction = $"Printed road {UserRoadNumber + 1} (every 50th value descending) to screen.";
                         break;
 
-                    case 11:  // Search for a value (return indexes) (Binary Search).
+                    case 12:  // Search for a value (return indexes) (Binary Search).
                         Console.WriteLine($"What number do you want to search for?");
                         NumberToSearchFor = GetIntInputFromUser();
                         roads[UserRoadNumber].FindValueBinaryALL(NumberToSearchFor);
                         LastAction = $"Searched for {NumberToSearchFor} (Binary Search).";
                         break;
 
-                    case 12:  // Search for a value (return indexes or nearest) (Binary Search).
+                    case 13:  // Search for a value (return indexes or nearest) (Binary Search).
                         Console.WriteLine($"What number do you want to search for?");
                         NumberToSearchFor = GetIntInputFromUser();
                         roads[UserRoadNumber].FindValueBinaryNEAREST(NumberToSearchFor);
                         LastAction = $"Searched for {NumberToSearchFor} (Binary Search).";
                         break;
 
-                    case 13:  // Search for a value (return indexes) (Sequential Search).
+                    case 14:  // Search for a value (return indexes) (Sequential Search).
                         Console.WriteLine($"What number do you want to search for?");
                         NumberToSearchFor = GetIntInputFromUser();
                         roads[UserRoadNumber].FindValueSequentialALL(NumberToSearchFor);
                         LastAction = $"Searched for {NumberToSearchFor} (Sequential Search).";
                         break;
 
-                    case 14:  // Search for a value (return indexes or nearest) (Sequential Search).
+                    case 15:  // Search for a value (return indexes or nearest) (Sequential Search).
                         Console.WriteLine($"What number do you want to search for?");
                         NumberToSearchFor = GetIntInputFromUser();
                         roads[UserRoadNumber].FindValueSequentialNEAREST(NumberToSearchFor);
                         LastAction = $"Searched for {NumberToSearchFor} (Sequential Search).";
                         break;
+
+
 
                     default:
                         LastAction = "ERROR: Invalid input.";

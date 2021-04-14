@@ -145,5 +145,21 @@ namespace algorithm_assessment_1 {
             }
             return result;
         }
+
+
+        public static int[] InsertionSort(int[] array) {
+            for (int a = 1; a < array.Length; a++) {
+                int key = array[a];
+                int b = a - 1;
+                while (b >= 0 && array[b] > key) {
+                    _StepsCounter++;
+                    array[b + 1] = array[b];
+                    b = b - 1;
+                }
+                array[b + 1] = key;
+            }
+            return array;
+        }
+
     }
 }

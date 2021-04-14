@@ -124,6 +124,18 @@ namespace algorithm_assessment_1 {
         }
 
 
+        // Insertion Sort
+        public void PrintRoadDataOrderedInsertionSort() {
+            PrintRoadDataOrderedInsertionSort(1);
+        }
+
+        public void PrintRoadDataOrderedInsertionSort(int everyNthValue) {
+            ResetOrderedData();
+            _dataOrdered = Sorting.InsertionSort(_dataOrdered);
+            MiscMethods.PrintIntArrayToScreen(_dataOrdered, everyNthValue);
+        }
+
+
         // Binary Search
         public void FindValueBinaryALL(int NumberToSearchFor) {
             ResetOrderedData();
