@@ -6,11 +6,11 @@ namespace algorithm_assessment_1 {
         static void Main(string[] args) {
             List<Road> roads = new List<Road>();
             string[] Filepaths = { "Road_1_256.txt", "Road_2_256.txt", "Road_3_256.txt", "Road_1_2048.txt", "Road_2_2048.txt", "Road_3_2048.txt"};
-            string[] MenuOptions = { "0. Exit.", "1. Switch road number.", "2. Print unordered (for reference).\n",
-                "3. Print ordered (Quick Sort).", "4. Print ordered (Bubble Sort).",
-                "5. Print ordered (Selection Sort)", "6. Print ordered (Merge Sort)",
-                "7. Print ordered (Insersion Sort)\n",
-                "8. Print ordered (every 10th value ascending).", "9. Print ordered (every 10th value descending).",
+            string[] MenuOptions = { " 0. Exit.", " 1. Switch road number.", " 2. Print unordered (for reference).\n",
+                " 3. Print ordered (Quick Sort).", " 4. Print ordered (Bubble Sort).",
+                " 5. Print ordered (Selection Sort)", " 6. Print ordered (Merge Sort)",
+                " 7. Print ordered (Insersion Sort)\n",
+                " 8. Print ordered (every 10th value ascending).", " 9. Print ordered (every 10th value descending).",
                 "10. Print ordered (every 50th value ascending).", "11. Print ordered (every 50th value descending).",
                 "12. Print ordered (custom).\n",
                 "13. Search for a value (return indexes) (Binary Search).", "14. Search for a value (return indexes or nearest) (Binary Search).",

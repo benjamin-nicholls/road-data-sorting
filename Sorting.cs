@@ -71,13 +71,14 @@ namespace algorithm_assessment_1 {
                 for (int b = a + 1; b < array.Length; b++) {
                     if (array[b] < array[IndexOfSmallestValue]) {
                         IndexOfSmallestValue = b;
+                        
                     }
+                    _StepsCounter++;
                 }
                 if (IndexOfSmallestValue != a) {
                     int temp = array[IndexOfSmallestValue];
                     array[IndexOfSmallestValue] = array[a];
                     array[a] = temp;
-                    _StepsCounter++;
                 }
             }
             return array;
