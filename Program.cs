@@ -158,8 +158,6 @@ namespace algorithm_assessment_1 {
                         LastAction = $"Searched for {UserResponseOption} (Sequential Search).";
                         break;
 
-
-
                     default:
                         LastAction = "ERROR: Invalid input.";
                         break;
