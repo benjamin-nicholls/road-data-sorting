@@ -116,7 +116,7 @@ namespace algorithm_assessment_1 {
 
                     case 12:  // Print ordered (user input).
                         while (true) {
-                            Console.WriteLine("\n    What number do you want to increment by? Negative numbers can be used for decreasing incrementation.");
+                            Console.WriteLine("    What number do you want to increment by? Negative numbers can be used for decreasing incrementation.");
                             UserResponseOption = GetIntInputFromUser();
 
                             if (UserResponseOption != 0 && UserResponseOption < roads[SelectedRoad].DataUnordered.Length - 1
