@@ -152,9 +152,9 @@ namespace algorithm_assessment_1 {
                 int key = array[a];
                 int b = a - 1;
                 while (b >= 0 && array[b] > key) {
-                    _StepsCounter++;
                     array[b + 1] = array[b];
-                    b = b - 1;
+                    b--;
+                    _StepsCounter++;
                 }
                 array[b + 1] = key;
             }
