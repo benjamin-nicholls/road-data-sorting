@@ -137,30 +137,30 @@ namespace algorithm_assessment_1 {
 
 
         // Binary Search
-        public void FindValueBinaryALL(int NumberToSearchFor) {
+        public void FindValueBinaryALL(int numberToSearchFor) {
             ResetOrderedData();
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
-            Console.WriteLine(Searching.BinarySearchIterativeALL(_dataOrdered, NumberToSearchFor));
+            Console.WriteLine(Searching.BinarySearchIterativeALL(_dataOrdered, numberToSearchFor));
         }
 
-        public void FindValueBinaryNEAREST(int NumberToSearchFor) {
+        public void FindValueBinaryNEAREST(int numberToSearchFor) {
             ResetOrderedData();
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
-            Console.WriteLine(Searching.BinarySearchIterativeNEAREST(_dataOrdered, NumberToSearchFor));
+            Console.WriteLine(Searching.BinarySearchIterativeNEAREST(_dataOrdered, numberToSearchFor));
         }
 
 
         // Sequential Search
-        public void FindValueSequentialALL(int NumberToSearchFor) {
+        public void FindValueSequentialALL(int numberToSearchFor) {
             ResetOrderedData();
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
-            Console.WriteLine(Searching.SequentialSearchALL(_dataOrdered, NumberToSearchFor));
+            Console.WriteLine(Searching.SequentialSearchALL(_dataOrdered, numberToSearchFor));
         }
 
-        public void FindValueSequentialNEAREST(int NumberToSearchFor) {
+        public void FindValueSequentialNEAREST(int numberToSearchFor) {
             ResetOrderedData();
             _dataOrdered = Sorting.QuickSort(_dataOrdered);
-            Console.WriteLine(Searching.SequentialSearchNEAREST(_dataOrdered, NumberToSearchFor));
+            Console.WriteLine(Searching.SequentialSearchNEAREST(_dataOrdered, numberToSearchFor));
         }
     }
 }
