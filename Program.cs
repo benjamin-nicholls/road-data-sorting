@@ -16,9 +16,9 @@ namespace algorithm_assessment_1 {
                 "13. Search for a value (return indexes) (Binary Search).", "14. Search for a value (return indexes or nearest) (Binary Search).",
                 "15. Search for a value (return indexes) (Sequential Search).", "16. Search for a value (return indexes or nearest) (Sequential Search).\n",
             };
-            int MaxMenuOptionNumber = int.Parse(MenuOptions[^1].Split(".")[0]);
-            int UserResponseMenu;
-            int UserResponseOption;
+            int MaxMenuOptionNumber = MenuOptions.Length + 1;  // Used for guarding
+            int UserResponseMenu;  // Main menu option
+            int UserResponseOption;  // 2nd layer option
             int SelectedRoad = 0;  // Default road.
             string LastAction = "Program started.";
 
@@ -30,12 +30,12 @@ namespace algorithm_assessment_1 {
                     Console.Clear();
                     Console.WriteLine("= = = = = = =  Algorithms and Complexity - Search and Sort Program  = = = = = = =\n");
                     Console.WriteLine($">>> Last Action: {LastAction}");
-                    Console.WriteLine($">>> Selected road: { SelectedRoad + 1}. {roads[SelectedRoad].Name}.\n");
+                    Console.WriteLine($">>> Selected road: {SelectedRoad + 1}. {roads[SelectedRoad].Name}.\n");
                     foreach (string option in MenuOptions) {
                         Console.WriteLine("    " + option);
                     }
                     UserResponseMenu = GetIntInputFromUser();
-                    if (UserResponseMenu >= 0 && UserResponseMenu <= MaxMenuOptionNumber) { break; }
+                    if ((UserResponseMenu >= 0) && (UserResponseMenu <= MaxMenuOptionNumber)) { break; }
                 }
 
                 Console.WriteLine();
@@ -55,7 +55,7 @@ namespace algorithm_assessment_1 {
                             Console.WriteLine($"\n    Current number of roads: {roads.Count}.\n    Which road would you like to select?");
                             SelectedRoad = GetIntInputFromUser() - 1;
 
-                            if (SelectedRoad >= 0 && SelectedRoad < roads.Count) {
+                            if ((SelectedRoad >= 0) && (SelectedRoad < roads.Count)) {
                                 LastAction = $"Changed selected road to road {SelectedRoad + 1}.";
                                 break;
                             } else {
@@ -119,8 +119,9 @@ namespace algorithm_assessment_1 {
                             Console.WriteLine("    What number do you want to increment by? Negative numbers can be used for decreasing incrementation.");
                             UserResponseOption = GetIntInputFromUser();
 
-                            if (UserResponseOption != 0 && UserResponseOption < roads[SelectedRoad].DataUnordered.Length - 1
-                                && UserResponseOption > -roads[SelectedRoad].DataUnordered.Length - 1)  {
+                            if ((UserResponseOption != 0) &&
+                                (UserResponseOption < roads[SelectedRoad].DataUnordered.Length - 1) &&
+                                (UserResponseOption > -roads[SelectedRoad].DataUnordered.Length - 1)) {
                                 LastAction = $"Printed road {SelectedRoad + 1} (custom: {UserResponseOption}) to screen.";
                                 break;
                             } else {
