@@ -76,7 +76,7 @@ namespace algorithm_assessment_1 {
         }
 
 
-        // Printing ordered
+        // Quick Sort
         public void PrintRoadDataOrderedQuickSort() {
             PrintRoadDataOrderedQuickSort(1);
         }
