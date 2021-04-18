@@ -72,6 +72,7 @@ namespace algorithm_assessment_1 {
             List<int> indexesOfNumberToFind = new List<int>();
 
             while (left <= right) {
+                _StepsCounter++;
                 int midpoint = (left + right) / 2;
 
                 if (array[midpoint] == numberToFind) {
