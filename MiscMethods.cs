@@ -10,11 +10,11 @@ namespace algorithm_assessment_1 {
         public static void PrintIntArrayToScreen(int[] array, int everyNthValue) {
             if (everyNthValue > 0) {
                 for (int i = 0; i < array.Length; i += everyNthValue) {
-                    Console.WriteLine(array[i]);
+                    Console.Write(array[i] + " ");
                 }
             } else {  // Negative everyNthValue allows for descending
                 for (int i = array.Length - 1; i >= 0; i += everyNthValue) {
-                    Console.WriteLine(array[i]);
+                    Console.Write(array[i] + " ");
                 }
             }
         }
